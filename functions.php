@@ -68,30 +68,34 @@ function humescores_setup() {
 endif;
 add_action( 'after_setup_theme', 'humescores_setup' );
 
+
 /**
  * Register custom fonts.
  */
 function humescores_fonts_url() {
 	$fonts_url = '';
 
-	/*
+	/**
 	 * Translators: If there are characters in your language that are not
 	 * supported by Source Sans Pro and PT Serif, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
 	$source_sans_pro = _x( 'on', 'Source Sans Pro font: on or off', 'humescores' );
-        $pt_serif = _x( 'on', 'PT Serif font: on or off', 'humescores' );
+	$pt_serif = _x( 'on', 'PT Serif font: on or off', 'humescores' );
 
-        $font_families = array();
+	$font_families = array();
+	
+	if ( 'off' !== $source_sans_pro ) {
+		$font_families[] = 'Source Sans Pro:400,400i,700,900';
+	}
+	
+	if ( 'off' !== $pt_serif ) {
+		$font_families[] = 'PT Serif:400,400i,700,700i';
+	}
+	
+	
+	if ( in_array( 'on', array($source_sans_pro, $pt_serif) ) ) {
 
-        if ( 'off' !== $source_sans_pro ) {
-            $font_families[] = 'Source Sans Pro:400,400i,700,900';
-        }
-        if ( 'off' !== $pt_serif ) {
-            $font_families[] = 'PT Serif:400,400i,700,700i'; 
-        }
-	if ( in_array( 'on', array($source_sans_pro, $pt_serif) )) {
-		
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
 			'subset' => urlencode( 'latin,latin-ext' ),
@@ -106,7 +110,7 @@ function humescores_fonts_url() {
 /**
  * Add preconnect for Google Fonts.
  *
- * @since Humescores 1.0
+ * @since Twenty Seventeen 1.0
  *
  * @param array  $urls           URLs to print for resource hints.
  * @param string $relation_type  The relation type the URLs are printed.
