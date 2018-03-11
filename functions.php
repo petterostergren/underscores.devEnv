@@ -64,6 +64,14 @@ function humescores_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+        
+        //Add theme support for Custom Logo
+        add_theme_support( 'custom-logo', array(
+            'height'      => 90,
+            'width'       => 90,
+            'flex-height' => true,
+        ));
+                
 }
 endif;
 add_action( 'after_setup_theme', 'humescores_setup' );
