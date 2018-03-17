@@ -13,6 +13,10 @@
 
 	</div><!-- #content -->
 
+        <?php
+            get_sidebar( 'footer' );
+        ?>
+        
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<?php
 		// Make sure there is a social menu to display.
@@ -27,6 +31,7 @@
 			<span class="sep"> | </span>
 			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'humescores' ), 'humescores', '<a href="https://mor10.com/courses" rel="designer">Morten Rand-Hendriksen</a>' ); ?>
 		</div><!-- .site-info -->
+                
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
