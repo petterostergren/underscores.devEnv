@@ -895,12 +895,12 @@ a:hover, a:active {
 }
 
 .archive-view .post {
+	position: relative;
 	background: white;
 }
 
 .archive-view .post__content {
 	padding: 2em 2em 3em;
-	position: relative;
 }
 
 @media screen and (min-width: 900px) {
@@ -918,6 +918,24 @@ a:hover, a:active {
 	.archive-view.has-sidebar .widget-area {
 		width: 30%;
 	}
+}
+
+.sticky::before {
+	content: "";
+	display: block;
+	width: 2em;
+	height: 2em;
+	position: absolute;
+	top: 0;
+	right: 0;
+	border-width: 0 2em 2em 0;
+	border-color: #eee #eee white;
+	border-style: solid;
+	box-shadow: -2px 2px 2px rgba(26, 26, 26, 0.1);
+}
+
+.sticky:hover::before {
+	display: none;
 }
 
 .index-image img {
