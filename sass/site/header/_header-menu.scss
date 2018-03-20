@@ -66,7 +66,7 @@
 
 	.menu-item-has-children,
 	.page_item_has_children {
-		min-width: 218px;             
+		min-width: 218px;
 	}
 	.menu-item-has-children > a,
 	.page_item_has_children > a {
@@ -99,8 +99,7 @@ button.dropdown-toggle {
 
 /* Toggle small menu and children on */
 .toggled-on ul,
-.sub-menu.toggled-on,
-.children.toggled-on{
+.sub-menu.toggled-on {
 	display: block;
 }
 
