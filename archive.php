@@ -30,7 +30,7 @@ endif; ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-                    <?php
+			<?php
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
 
@@ -44,12 +44,12 @@ endif; ?>
 			endwhile;
 
 			the_posts_pagination( array(
-				'prev_text' => humescores_get_svg( array( 'icon' => 'arrow-long-left') ) . __( ' Newer', 'humescores' ),
-				'next_text' => __( 'Older ', 'humescores' ) . humescores_get_svg( array( 'icon' => 'arrow-long-right') ),
+				'prev_text' => humescores_get_svg( array( 'icon' => 'arrow-long-left', 'fallback' => true ) ) . __( 'Newer', 'humescores' ),
+				'next_text' => __( 'Older', 'humescores' ) . humescores_get_svg( array( 'icon' => 'arrow-long-right' , 'fallback' => true ) ),
 				'before_page_number' => '<span class="screen-reader-text">' . __( 'Page ', 'humescores' ) . '</span>',
 			));
 
-                    ?>
+		?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
